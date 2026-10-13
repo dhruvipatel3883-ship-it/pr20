@@ -1,0 +1,302 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+  background: #f1f5f9;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+.header {
+  background: #243b64;
+  color: white;
+  padding: 28px max(24px, calc((100% - 1400px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+}
+
+.header p {
+  margin: 0;
+  color: #dbeafe;
+}
+
+.header-tag {
+  border: 1px solid #647da8;
+  border-radius: 20px;
+  padding: 8px 13px;
+  white-space: nowrap;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 24px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.summary-card, .employee-form, .list-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 10px #0f172a08;
+}
+
+.summary-card span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.summary-card strong {
+  font-size: 28px;
+  color: #243b64;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+h2 {
+  margin: 0 0 20px;
+  color: #243b64;
+  font-size: 21px;
+}
+
+.employee-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 16px 0 7px;
+}
+
+.employee-form input,
+.employee-form select,
+.search {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: white;
+  min-width: 0;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #bfdbfe;
+  border-color: #2563eb;
+}
+
+.form-actions, .row-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  flex: 1;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.list-heading h2 {
+  margin-bottom: 6px;
+}
+
+.list-heading p, .footer-note {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.search {
+  max-width: 250px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+th {
+  color: #475569;
+  background: #f8fafc;
+}
+
+td {
+  white-space: nowrap;
+}
+
+.department {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+}
+
+.row-actions {
+  margin: 0;
+}
+
+.edit-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.edit-btn:hover {
+  background: #bfdbfe;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+.success, .error, .notice {
+  padding: 13px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.notice {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.empty-state {
+  padding: 45px 15px;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-state h3 {
+  color: #334155;
+}
+
+.footer-note {
+  margin-top: 20px;
+}
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 22px 16px;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header-tag {
+    font-size: 12px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .summary {
+    gap: 10px;
+  }
+
+  .summary-card, .employee-form, .list-card {
+    padding: 16px;
+  }
+
+  .list-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search {
+    max-width: none;
+  }
+}
